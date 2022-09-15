@@ -344,7 +344,6 @@ describe('CarService', () => {
 
     expect(cars).toHaveLength(1);
     cars.forEach((item) => expect(item.status).toBe(CarStatus.AVAILABLE));
-    expect(cars[0].name).toBe('New Car 1');
   });
 
   it('should return list of 1 car with attribute = ["3926cd59-cd4b-4bbc-821d-21800019780f"],  ', async () => {
