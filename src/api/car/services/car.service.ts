@@ -319,7 +319,7 @@ export class CarService {
       const result = await this.uploadImage(image);
       uploadResult.push(result.data?.display_url);
     }
-    updateCar.images = [...body.existedImages, ...uploadResult];
+    updateCar.images = [...(body.existedImages || []), ...uploadResult];
 
     // Update other attributes
     for (const prop of Object.keys(body)) {
