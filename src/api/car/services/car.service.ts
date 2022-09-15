@@ -307,6 +307,8 @@ export class CarService {
 
     // Update attributes list
     if (typeof body.attributes == 'string') body.attributes = [body.attributes];
+    if (typeof body.existedImages == 'string')
+      body.existedImages = [body.existedImages];
     updateCar.attributes = await this.getAttributesFromIds(body.attributes);
 
     // Update images list
@@ -323,7 +325,7 @@ export class CarService {
     for (const prop of Object.keys(body)) {
       if (
         prop !== 'images' &&
-        prop !== 'existedImage' &&
+        prop !== 'existedImages' &&
         prop !== 'attributes'
       ) {
         updateCar[prop] = body[prop];

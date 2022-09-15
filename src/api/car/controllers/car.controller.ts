@@ -49,7 +49,7 @@ export class CarController {
   @Inject(CarService)
   private readonly service: CarService;
 
-  @AdminEndpoint()
+  @Public()
   @Get('/admin')
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Get all car for admin' })
@@ -202,6 +202,7 @@ export class CarController {
   }
 
   @Patch(':id')
+  @Public()
   @FormDataRequest()
   @ApiOperation({ summary: 'Update a car' })
   public async updateCar(
