@@ -107,8 +107,6 @@ export class CarService {
         countAttributes: filter.attribute?.length,
       })
       .groupBy('car.id')
-      .take(limit)
-      .skip(limit * ((filter.page || 1) - 1))
       .getMany();
 
     const availableCar = [];
